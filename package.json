@@ -1,0 +1,26 @@
+{
+    "name": "wml",
+    "displayName": "WML",
+    "description": "WML (Wesnoth Markup Language) Syntax Support for VS Code",
+    "version": "0.0.1",
+    "publisher": "aaronwinter",
+    "engines": {
+        "vscode": "^1.13.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "wml",
+            "aliases": ["WML", "wml"],
+            "extensions": [".cfg"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "wml",
+            "scopeName": "source.wml",
+            "path": "./syntaxes/wml.tmLanguage.json"
+        }]
+    }
+}
