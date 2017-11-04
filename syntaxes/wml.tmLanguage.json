@@ -63,6 +63,21 @@
 			"name": "string.quoted.double.wml"
 		},
 		{
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.wml"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.wml"
+				}
+			},
+			"name": "string.quoted.double.wml"
+		},
+		{
 			"captures": {
 				"1": {
 					"name": "keyword.other.definition.wml"
