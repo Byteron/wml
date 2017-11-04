@@ -1,32 +1,90 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "WML",
+	"fileTypes": [
+		"cfg"
+	],
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.wml",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.wml",
-			"begin": "\"",
-			"end": "\"",
+			"begin": "(^[ \\t]+)?(?=#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.whitespace.comment.leading.wml"
+				}
+			},
+			"end": "(?!\\G)",
 			"patterns": [
 				{
-					"name": "constant.character.escape.wml",
-					"match": "\\\\."
+					"begin": "#",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.wml"
+						}
+					},
+					"end": "\\n",
+					"name": "comment.line.number-sign.wml"
 				}
 			]
+		},
+		{
+			"begin": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.wml"
+				}
+			},
+			"end": "'",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.wml"
+				}
+			},
+			"name": "string.quoted.single.wml",
+			"patterns": [
+				{
+					"match": "\\\\.",
+					"name": "constant.character.escape.wml"
+				}
+			]
+		},
+		{
+			"begin": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.begin.wml"
+				}
+			},
+			"end": "\"",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.string.end.wml"
+				}
+			},
+			"name": "string.quoted.double.wml"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "keyword.other.definition.wml"
+				},
+				"2": {
+					"name": "punctuation.separator.key-value.wml"
+				}
+			},
+			"match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
+		},
+		{
+			"captures": {
+				"1": {
+					"name": "punctuation.definition.entity.wml"
+				},
+				"3": {
+					"name": "punctuation.definition.entity.wml"
+				}
+			},
+			"match": "^(\\[)(.*?)(\\])",
+			"name": "entity.name.section.group-title.wml"
 		}
-	},
+	],
 	"scopeName": "source.wml"
 }
