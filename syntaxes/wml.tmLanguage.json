@@ -76,6 +76,17 @@
 		{
 			"captures": {
 				"1": {
+					"name": "keyword.other.definition.wml"
+				},
+				"2": {
+					"name": "punctuation.separator.key-value.wml"
+				}
+			},
+			"match": "(=)*\\b([a-zA-Z0-9_.-]+)\\b\\s"
+		},
+		{
+			"captures": {
+				"1": {
 					"name": "punctuation.definition.entity.wml"
 				},
 				"3": {
