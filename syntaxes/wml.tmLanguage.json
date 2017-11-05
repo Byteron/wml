@@ -1,8 +1,11 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "WML",
+	"fileTypes": [
+		"cfg"
+	],
 	"patterns": [
-		{
+    {
 			"captures": {
 				"1": {
 					"name": "keyword.other.definition.wml"
