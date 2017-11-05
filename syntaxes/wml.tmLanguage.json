@@ -1,25 +1,25 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"foldingStartMarker":"(\\#define|\\#ifdef|\\#ifndef|\\#ifver|\\[([^\\\/].*)\\])",
-	"foldingStopMarker":"(\\#enddef|\\#endif|\\[\\\/.*\\])",
 	"name": "WML",
 	"patterns": [
+
 		{
-			"match":"\\b(abbrev|active_on|add|advance|advancefrom|advances_to|aggression|ai|ai_algorithm|alert|alignment|allow_new_game|allow_player|alpha|animate|amount|apply_to|attack_depth|attack_weight|attack_sound_start_time|blend_color|blend_ratio|bonus|boolean_equals|canrecruit|cannot_use_message|carryover_add|carryover_percentage|carryover_report|caution|chance|colour_lock|condition|cumulative|comment|controller|cost|damage|damage_inflicted|damage_taken|default|defense_weight|defensive|define|description|description_inactive|die_sound|dies|difficulties|difficulty_descriptions|direction|duration|email|enemy|equals|extra_defines|experience|experience_modifier|female_name|find_vacant|fire_event|first_scenario|first_time_only|fog|force_lock_settings|frequency|gold|generator|gender|grouping|halo|halo_x|halo_y|hide_help|hit|hitpoints|hits|icon|id|image|image_diagonal|image_mod|income|inherit|leader_value|level|linger_mode|kill|map_data|markov_chain_size|max_times|male_name|max_value|message|miss|missile_start_time|movement|movement_used|movement_type|multiply|name|name_inactive|next_scenario|no_leader|not_equals|num_traits|number|offensive|offset|passive_leader|plural_name|poison|profile|protect_leader|protect_leader_radius|python_script|race|radius|random_start_time|range|rank|recall_cost|recruit|recruit_cost|recruitment_ignore_bad_combat|recruitment_ignore_bad_movement|recruitment_pattern|require_amla|replay_save|result|role|save_id|scout_village_targetting|sections|show|shroud|side|side_number|silent|simple_targetting|sort_topics|speaker|special|start_time|strict_amla|sound|submerge|swing|team_lock|team_name|terrain|text|text_color|time_of_day|time_of_day_id|title|topics|turn|turn_number|turns|type|unit_description|undead_variation|usage|user_description|user_team_name|value|variable|variation_name|victory_when_enemies_defeated|village_gold|villages_per_scout|village_value|wikiuser|x|y|zoc)\\b",
-			"name":"keyword.wml"
+			"captures": {
+				"1": {
+					"name": "keyword.other.definition.wml"
+				},
+				"2": {
+					"name": "punctuation.separator.key-value.wml"
+				}
+			},
+			"match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
 		},
+
 		{
-			"match":"\\b(deep_water|castle|cave|reef|flat|forest|frozen|fungus|hills|mountains|sand|shallow_water|swamp_water|village|unwalkable|impassable|blade|pierce|impact|fire|cold|arcane)\\b",
-			"name":"keyword.other.wml"
-		},
-		{
-			"match":"\\b(ai|human|yes|player|moveto|no|win|prestart|true|false)\\b",
-			"name":"constant.language.wml"
-		},
-		{
-			"match":"(\\=\\s*|\\+|\\-|\\,|\\:|\\~|\\.)",
+			"match":"\\b(\\=\\s*|\\+|\\-|\\,|\\:|\\~|\\.|\\^)\\b",
 			"name":"keyword.operator.wml"
 		},
+
 		{
 			"begin":"\"",
 			"end":"\"",
@@ -28,59 +28,21 @@
 			[
 				{
 					"match":"\\\\.",
-					"name":"constant.character.escape.untitled"
+					"name":"constant.character.escape.untitled.wml"
 				}
 			]
 		},
+
+
+
 		{
-			"begin":"\\{\\b([_0-9a-zA-Z]*)",
-			"contentName":"variable.language",
-			"end":"\\}",
-			"name":"support.function.call.wml",
-			"patterns":
-			[
-				{
-					"include":"$self"
-				}
-			]
-		},
-		{
-			"begin":"\\[([_A-Za-z]*)\\]",
-			"contentName":"variable.language",
-			"end":"\\[\\\/\\1\\]",
-			"name":"support.constant.tag.wml",
-			"patterns":
-			[
-				{
-					"include":"$self"
-				}
-			]
-		},
-		{
-			"match":"\\b\\d+((\\.(\\d+\\b)?)?(?i:e\\+?\\d*\\b)?|\\b)",
-			"name":"constant.numeric.wml"
-		},
-		{
-			"match":"(\\#undef|\\#textdomain)\\s([^\\s]*)\\n",
-			"captures":
-			{
-				"1":
-				{
-					"name":"storage.type.objc"
-				},
-				"2":
-				{
-					"name":"entity.name.function"
-				}
-			}
-		},
-		{
-			"begin":"(\\#define|\\#ifver|\\#ifdef|\\#ifndef)\\s([^\\s]*)(\\s(.*))?\\n",
+			"begin":"(\\#define)\\s([^\\s]*)(\\s(.*))?\\n",
+			"contentName":"variable.language.wml",
 			"beginCaptures":
 			{
 				"1":
 				{
-					"name":"storage.type.objc"
+					"name":"entity.name.function.preprocessor.wml"
 				},
 				"2":
 				{
@@ -91,12 +53,12 @@
 					"name":"variable.parameter"
 				}
 			},
-			"end":"(\\#enddef|\\#endif)",
+			"end":"(\\#enddef)",
 			"endCaptures":
 			{
 				"1":
 				{
-					"name":"storage.type.objc"
+					"name":"entity.name.function.preprocessor.wml"
 				}
 			},
 			"name":"support.function.definition.wml",
@@ -107,6 +69,94 @@
 				}
 			]
 		},
+
+		{
+			"begin":"(\\#ifdef|\\#ifndef|\\#ifver)\\s([^\\s]*)",
+			"contentName":"variable.language.wml",
+			"beginCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"entity.name.function.wml"
+				}
+			},
+			"end":"(\\#endif)",
+			"endCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				}
+			},
+			"name":"support.function.definition.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+
+
+
+		{
+			"match":"(\\#undef|\\#textdomain)\\s([^\\s]*)",
+			"captures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"entity.name.function.wml"
+				}
+			},
+			"name":"support.function.definition.wml"
+		},
+
+		{
+			"match":"(\\#else)",
+			"captures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				}
+			},
+			"name":"support.function.definition.wml"
+		}
+
+		{
+			"begin":"\\{\\b([_0-9a-zA-Z]*)",
+			"contentName":"variable.language.wml",
+			"end":"\\}",
+			"name":"support.function.call.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+
+		{
+			"begin":"\\[([_A-Za-z]*)\\]",
+			"contentName":"variable.language.wml",
+			"end":"\\[\\\/\\1\\]",
+			"name":"support.constant.tag.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+
 		{
 			"match":"\\#\\s.*",
 			"name":"comment.wml"
