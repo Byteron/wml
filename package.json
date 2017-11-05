@@ -1,11 +1,11 @@
 {
     "name": "wml",
     "displayName": "WML",
-    "description": "WML (Wesnoth Markup Language) Syntax Support for VS Code",
-    "version": "0.0.1",
-    "publisher": "aaronwinter",
+    "description": "Wesnoth Markup Language Syntax Highlightning",
+    "version": "0.1.0",
+    "publisher": "3wxtmy3y2tzxw5dwi6qblpmg3e4pv5xjjcbqlev6iaeq4iwndq2q",
     "engines": {
-        "vscode": "^1.13.0"
+        "vscode": "^1.17.0"
     },
     "categories": [
         "Languages"
