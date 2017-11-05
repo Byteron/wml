@@ -121,7 +121,7 @@
 				}
 			},
 			"name":"support.function.definition.wml"
-		}
+		},
 		{
 			"begin":"\\{\\b([_0-9a-zA-Z]*)",
 			"contentName":"variable.language.wml",
