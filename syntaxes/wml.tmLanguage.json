@@ -24,6 +24,15 @@
 			"name":"keyword.operator.wml"
 		},
 		{
+			"match":"\\b(yes|no|true|false|null)\\b",
+			"name":"constant.language.wml"
+		},
+		
+		{
+			"match":"\\b([0-9]+)\\b",
+			"name":"constant.language.wml"
+		},
+		{
 			"begin":"\"",
 			"end":"\"",
 			"name":"string.wml",
@@ -130,7 +139,7 @@
 			]
 		},
 		{
-			"begin":"(\\#ifver|\\#ifnver)\\s([=<>]*)\\s([^\\s]*)",
+			"begin":"(\\#ifver|\\#ifnver)\\s([^\\s]*)\\s([=<>]*)\\s([^\\s]*)",
 			"beginCaptures":
 			{
 				"1":
@@ -139,11 +148,15 @@
 				},
 				"2":
 				{
-					"name":"keyword.operator.wml"
+					"name":"entity.name.version.wml"
 				},
 				"3":
 				{
-					"name":"entity.name.macro.wml"
+					"name":"keyword.operator.wml"
+				},
+				"4":
+				{
+					"name":"entity.name.version.wml"
 				}
 			},
 			"contentName": "text.wml",
