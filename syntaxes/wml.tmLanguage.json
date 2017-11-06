@@ -1,40 +1,41 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "WML",
-	"fileTypes": [
+	"fileTypes": 
+	[
 		"cfg"
 	],
-	"patterns": [
-    {
+	"patterns": 
+	[
+		{
 			"captures": {
 				"1": {
-					"name": "keyword.other.definition.wml"
+					"name": "keyword.wml"
 				},
 				"2": {
-					"name": "punctuation.separator.key-value.wml"
+					"name": "keyword.operator.wml"
 				}
 			},
-			"match": "\\b([a-zA-Z0-9_.-]+)\\b\\s*(=)"
+			"match": "\\b([//,a-zA-Z0-9_.-]+)\\b\\s*(=)"
 		},
 		{
-			"match":"\\b(\\=\\s*|\\+|\\-|\\,|\\:|\\~|\\.|\\^)\\b",
+			"match":"\\b(\\=\\s*|\\=|\\+|\\-|\\,|\\:|\\~|\\.|\\^)\\b",
 			"name":"keyword.operator.wml"
 		},
 		{
 			"begin":"\"",
 			"end":"\"",
-			"name":"string.quoted.double.wml",
+			"name":"string.wml",
 			"patterns":
 			[
 				{
 					"match":"\\\\.",
-					"name":"constant.character.escape.untitled.wml"
+					"name":"constant.character.escape.wml"
 				}
 			]
 		},
 		{
 			"begin":"(\\#define)\\s([^\\s]*)(\\s(.*))?\\n",
-			"contentName":"variable.language.wml",
 			"beginCaptures":
 			{
 				"1":
@@ -43,13 +44,14 @@
 				},
 				"2":
 				{
-					"name":"entity.name.function"
+					"name":"entity.name.macro.wml"
 				},
 				"3":
 				{
-					"name":"variable.parameter"
+					"name":"variable.parameter.wml"
 				}
 			},
+			"contentName": "text.wml",
 			"end":"(\\#enddef)",
 			"endCaptures":
 			{
@@ -68,7 +70,6 @@
 		},
 		{
 			"begin":"(\\#ifdef|\\#ifndef|\\#ifver)\\s([^\\s]*)",
-			"contentName":"variable.language.wml",
 			"beginCaptures":
 			{
 				"1":
@@ -77,9 +78,10 @@
 				},
 				"2":
 				{
-					"name":"entity.name.function.wml"
+					"name":"entity.name.macro.wml"
 				}
 			},
+			"contentName": "text.wml",
 			"end":"(\\#endif)",
 			"endCaptures":
 			{
@@ -88,7 +90,7 @@
 					"name":"entity.name.function.preprocessor.wml"
 				}
 			},
-			"name":"support.function.definition.wml",
+			"name":"entity.name.function.wml",
 			"patterns":
 			[
 				{
@@ -97,7 +99,7 @@
 			]
 		},
 		{
-			"match":"(\\#undef|\\#textdomain)\\s([^\\s]*)",
+			"match":"(\\#undef)\\s([^\\s]*)",
 			"captures":
 			{
 				"1":
@@ -109,7 +111,22 @@
 					"name":"entity.name.function.wml"
 				}
 			},
-			"name":"support.function.definition.wml"
+			"name":"entity.name.function.wml"
+		},
+		{
+			"match":"(\\#textdomain)\\s([^\\s]*)",
+			"captures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"entity.name.textdomain.wml"
+				}
+			},
+			"name":"entity.name.function.wml"
 		},
 		{
 			"match":"(\\#else)",
@@ -120,13 +137,13 @@
 					"name":"entity.name.function.preprocessor.wml"
 				}
 			},
-			"name":"support.function.definition.wml"
+			"name":"entity.name.function.wml"
 		},
 		{
-			"begin":"\\{\\b([_0-9a-zA-Z]*)",
-			"contentName":"variable.language.wml",
+			"begin":"(\\{|\\{\\~)\\b([_0-9a-zA-Z\\/\\-\\.]*)",
+			"contentName": "text.wml",
 			"end":"\\}",
-			"name":"support.function.call.wml",
+			"name":"support.function.wml",
 			"patterns":
 			[
 				{
@@ -135,10 +152,22 @@
 			]
 		},
 		{
-			"begin":"\\[([_A-Za-z]*)\\]",
-			"contentName":"variable.language.wml",
+			"begin":"(\\()\\b([_0-9a-zA-Z\\/\\-\\.]*)",
+			"contentName": "text.wml",
+			"end":"\\)",
+			"name":"text.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+		{
+			"begin":"\\[([_A-Za-z0-9]*)\\]",
+			"contentName": "text.wml",
 			"end":"\\[\\\/\\1\\]",
-			"name":"support.constant.tag.wml",
+			"name":"punctuation.definition.tag.wml",
 			"patterns":
 			[
 				{
@@ -148,6 +177,10 @@
 		},
 		{
 			"match":"\\#\\s.*",
+			"name":"comment.wml"
+		},
+		{
+			"match":"\\#\\!\\s.*",
 			"name":"comment.wml"
 		}
 	],
