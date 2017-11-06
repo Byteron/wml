@@ -3,7 +3,8 @@
 	"name": "WML",
 	"fileTypes": 
 	[
-		"cfg"
+		"cfg",
+		"pbl"
 	],
 	"patterns": 
 	[
@@ -67,9 +68,8 @@
 					"include":"$self"
 				}
 			]
-		},
-		{
-			"begin":"(\\#ifdef|\\#ifndef|\\#ifver)\\s([^\\s]*)",
+		},{
+			"begin":"(\\#arg)\\s([^\\s]*)",
 			"beginCaptures":
 			{
 				"1":
@@ -77,6 +77,71 @@
 					"name":"entity.name.function.preprocessor.wml"
 				},
 				"2":
+				{
+					"name":"variable.parameter.wml"
+				}
+			},
+			"contentName": "text.wml",
+			"end":"(\\#endarg)",
+			"endCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				}
+			},
+			"name":"support.function.definition.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+
+		{
+			"begin":"(\\#ifdef|\\#ifndef)\\s([^\\s]*)",
+			"beginCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"entity.name.macro.wml"
+				}
+			},
+			"contentName": "text.wml",
+			"end":"(\\#endif)",
+			"endCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				}
+			},
+			"name":"entity.name.function.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
+		{
+			"begin":"(\\#ifver|\\#ifnver)\\s([=<>]*)\\s([^\\s]*)",
+			"beginCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"keyword.operator.wml"
+				},
+				"3":
 				{
 					"name":"entity.name.macro.wml"
 				}
@@ -114,6 +179,10 @@
 			"name":"entity.name.function.wml"
 		},
 		{
+			"match":"(\\#\\swmllint\\:|\\#\\swmlscope\\:|\\#\\swmlindent\\:)(\\s(.*))?\\n",
+			"name":"entity.name.wmllint.wml"
+		},
+		{
 			"match":"(\\#textdomain)\\s([^\\s]*)",
 			"captures":
 			{
@@ -124,6 +193,36 @@
 				"2":
 				{
 					"name":"entity.name.textdomain.wml"
+				}
+			},
+			"name":"entity.name.function.wml"
+		},
+		{
+			"match":"(\\#warning)(\\s(.*))?\\n",
+			"captures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"token.warn-token.wml"
+				}
+			},
+			"name":"entity.name.function.wml"
+		},
+		{
+			"match":"(\\#error)(\\s(.*))?\\n",
+			"captures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"token.error-token.wml"
 				}
 			},
 			"name":"entity.name.function.wml"

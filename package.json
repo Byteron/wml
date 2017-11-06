@@ -14,7 +14,7 @@
         "languages": [{
             "id": "wml",
             "aliases": ["WML", "wml"],
-            "extensions": [".cfg"],
+            "extensions": [".cfg", ".pbl"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
