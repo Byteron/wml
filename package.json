@@ -2,8 +2,8 @@
     "name": "wml",
     "displayName": "WML",
     "description": "Wesnoth Markup Language Syntax Highlightning",
-    "publisher": "Aaron Winter",
-    "version": "1.0.0",
+    "publisher": "Bitron",
+    "version": "1.0.1",
     "engines": {
         "vscode": "^1.17.0"
     },
