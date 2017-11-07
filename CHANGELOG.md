@@ -14,3 +14,4 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 + # wmllint:
 + # wmlindent:
 + # wmlscope:
++ numerics and booleans are bold
