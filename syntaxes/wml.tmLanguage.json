@@ -186,7 +186,7 @@
 				},
 				"2":
 				{
-					"name":"entity.name.macro.wml"
+					"name":"entity.name.macro.undef.wml"
 				}
 			},
 			"name":"entity.name.function.wml"
