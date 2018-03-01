@@ -23,5 +23,8 @@
             "scopeName": "source.wml",
             "path": "./syntaxes/wml.tmLanguage.json"
         }]
+    },
+    "repository": {
+        "url": "https://github.com/Byteron/wml.git"
     }
 }
