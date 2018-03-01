@@ -2,8 +2,6 @@
 
 This is a small syntax highlighting extention for the Wesnoth Markup Language (WML). It is used to create addons for Battle for Wesnoth.
 
-![feature X](images/wml.png)
-
 > Please use the WML color theme to get the best results!
 
 ### Battle for Wesnoth 
