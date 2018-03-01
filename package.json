@@ -23,8 +23,5 @@
             "scopeName": "source.wml",
             "path": "./syntaxes/wml.tmLanguage.json"
         }]
-    },
-    "dependencies": {
-        "image": "file:/images/wml.PNG"
     }
 }
