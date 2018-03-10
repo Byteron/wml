@@ -3,15 +3,21 @@ All notable changes to the "wml" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
-- Initial release
+### Version 1.0.0
 
-## [Version 1.0.1]
-+ #arg
-+ #ifnver
-+ #warning
-+ #error
-+ # wmllint:
-+ # wmlindent:
-+ # wmlscope:
+Initial release of WMl Syntax Highlighting Support
+
+### Version 1.0.1
+
++ added \#arg
++ added \#ifnver
++ added \#warning
++ added \#error
++ added \# wmllint:
++ added \# wmlindent:
++ added \# wmlscope:
 + numerics and booleans are bold
+
+### Version 1.0.2
+
++ fixed comments without a blank between \# and text not recognized 

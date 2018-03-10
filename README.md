@@ -26,3 +26,7 @@ Initial release of WMl Syntax Highlighting Support
 + added \# wmlindent:
 + added \# wmlscope:
 + numerics and booleans are bold
+
+### Version 1.0.2
+
++ fixed comments without a blank between \# and text not recognized 
