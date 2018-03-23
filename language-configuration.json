@@ -22,5 +22,9 @@
         ["{", "}"],
         ["[", "]"],
         ["(", ")"]
-    ]
+    ],
+    "indentationRules": {
+		"increaseIndentPattern": "\\[([_A-Za-z0-9]*)\\]",
+		"decreaseIndentPattern": "\\[\\/([_A-Za-z0-9]*)\\]"
+	}
 }
