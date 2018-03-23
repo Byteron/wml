@@ -21,3 +21,7 @@ Initial release of WMl Syntax Highlighting Support
 ### Version 1.0.2
 
 + fixed comments without a blank between \# and text not recognized 
+
+### Version 1.0.3
+
++ added automatic indent after opening tags and automatic deindent of closing tags
