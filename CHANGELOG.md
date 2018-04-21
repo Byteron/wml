@@ -25,3 +25,7 @@ Initial release of WMl Syntax Highlighting Support
 ### Version 1.0.3
 
 + added automatic indent after opening tags and automatic deindent of closing tags
+
+### Version 1.0.4
+
++ better auto indentation
