@@ -3,7 +3,7 @@
     "displayName": "WML",
     "description": "Wesnoth Markup Language Syntax Highlightning",
     "publisher": "Bitron",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "bugs": { "url": "https://github.com/Byteron/wml/issues"},
     "engines": {
         "vscode": "^1.17.0"
