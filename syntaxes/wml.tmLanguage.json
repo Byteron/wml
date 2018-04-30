@@ -107,6 +107,37 @@
 				}
 			]
 		},
+		
+		{
+			"begin":"(\\#ifhave|\\#ifnhave)\\s([^\\s]*)",
+			"beginCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				},
+				"2":
+				{
+					"name":"entity.name.macro.wml"
+				}
+			},
+			"contentName": "text.wml",
+			"end":"(\\#endif)",
+			"endCaptures":
+			{
+				"1":
+				{
+					"name":"entity.name.function.preprocessor.wml"
+				}
+			},
+			"name":"entity.name.function.wml",
+			"patterns":
+			[
+				{
+					"include":"$self"
+				}
+			]
+		},
 
 		{
 			"begin":"(\\#ifdef|\\#ifndef)\\s([^\\s]*)",
