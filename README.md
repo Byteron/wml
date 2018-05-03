@@ -1,4 +1,4 @@
-# WML Syntax Highlightning
+# WML Syntax Highlighting
 
 This is a small syntax highlighting extention for the Wesnoth Markup Language (WML). It is used to create addons for Battle for Wesnoth.
 
@@ -11,6 +11,10 @@ is an [open source](https://opensource.org/faq#osd), turn-based strategy game wi
 
 
 ## Release Notes
+
+### Version 1.0.6
+
++ fixed typo in name :blushing:
 
 ### Version 1.0.5
 

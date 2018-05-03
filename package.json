@@ -1,7 +1,7 @@
 {
     "name": "wml",
     "displayName": "WML",
-    "description": "Wesnoth Markup Language Syntax Highlightning",
+    "description": "Wesnoth Markup Language Syntax Highlighting",
     "publisher": "Bitron",
     "version": "1.0.5",
     "bugs": { "url": "https://github.com/Byteron/wml/issues"},
