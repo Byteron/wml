@@ -6,6 +6,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Version 1.0.6
 
 + fixed typo in name :blushing:
++ added \\# po:
 
 ### Version 1.0.5
 

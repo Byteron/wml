@@ -15,6 +15,7 @@ is an [open source](https://opensource.org/faq#osd), turn-based strategy game wi
 ### Version 1.0.6
 
 + fixed typo in name :blushing:
++ added \\# po:
 
 ### Version 1.0.5
 

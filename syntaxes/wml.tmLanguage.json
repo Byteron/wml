@@ -223,10 +223,6 @@
 			"name":"entity.name.function.wml"
 		},
 		{
-			"match":"(\\#\\swmllint\\:|\\#\\swmlscope\\:|\\#\\swmlindent\\:)(\\s(.*))?\\n",
-			"name":"entity.name.wmllint.wml"
-		},
-		{
 			"match":"(\\#textdomain)\\s([^\\s]*)",
 			"captures":
 			{
@@ -319,7 +315,15 @@
 			]
 		},
 		{
-			"match":"\\#.*|\\#\\#.*|\\#\\s.*|\\#\\!\\s.*|\\#po.*|\\#\\spo.*",
+			"match":"(\\#\\swmllint\\:|\\#\\swmlscope\\:|\\#\\swmlindent\\:)(\\s(.*))?\\n",
+			"name":"entity.name.wmllint.wml"
+		},
+		{
+			"match":"\\#po.*|\\#\\spo.*",
+			"name":"entity.name.po.wml"
+		},
+		{
+			"match":"\\#.*|\\#\\#.*|\\#\\s.*|\\#\\!\\s.*",
 			"name":"comment.wml"
 		}
 	],
