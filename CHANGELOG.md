@@ -3,6 +3,10 @@ All notable changes to the "wml" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+### Version 1.0.7
+
++ added << >> autoclose
+
 ### Version 1.0.6
 
 + fixed typo in name :blushing:
