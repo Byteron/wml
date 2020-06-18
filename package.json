@@ -1,30 +1,47 @@
 {
-    "name": "wml",
-    "displayName": "WML",
-    "description": "Wesnoth Markup Language Syntax Highlighting",
-    "publisher": "Bitron",
-    "version": "1.0.6",
-    "bugs": { "url": "https://github.com/Byteron/wml/issues"},
-    "engines": {
-        "vscode": "^1.17.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "wml",
-            "aliases": ["WML", "wml"],
-            "extensions": [".cfg", ".pbl"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "wml",
-            "scopeName": "source.wml",
-            "path": "./syntaxes/wml.tmLanguage.json"
-        }]
-    },
-    "repository": {
-        "url": "https://github.com/Byteron/wml.git"
-    }
+	"name": "wml",
+	"displayName": "WML",
+	"description": "Wesnoth Markup Language Syntax Highlighting",
+	"publisher": "Bitron",
+	"version": "1.0.6",
+	"bugs": {
+		"url": "https://github.com/Byteron/wml/issues"
+	},
+	"engines": {
+		"vscode": "^1.17.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "wml",
+				"aliases": [
+					"WML",
+					"wml"
+				],
+				"extensions": [
+					".cfg",
+					".pbl"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "wml",
+				"scopeName": "source.wml",
+				"path": "./syntaxes/wml.tmLanguage.json"
+			}
+		]
+	},
+	"repository": {
+		"url": "https://github.com/Byteron/wml.git"
+	},
+	"__metadata": {
+		"id": "f8439943-aded-4410-8396-4cfad3df4991",
+		"publisherDisplayName": "Aaron Winter",
+		"publisherId": "71205e79-0946-4bef-a6ac-7c1fc9440a0a"
+	}
 }
